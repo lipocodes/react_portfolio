@@ -1,0 +1,45 @@
+* npx create-react-app .
+
+* https://fonts.google.com/ 
+
+* In public we need initially only: index.html
+  In src we need only: index.js, App.js
+  
+* In public/index.html, add:
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100;1,500&display=swap" rel="stylesheet">
+    <style>
+      *{
+        font-family: 'Roboto', sans-serif;
+		margin:0;
+      }
+    </style>  
+	
+* In src/index.js, we need:
+  import React from 'react';
+  import ReactDOM from 'react-dom';
+  import App from './App';
+
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+
+* In src/App.js, we need initially:
+  import './App.css';
+  function App() {
+    return (
+      <div className="app">
+         <h1>Hello World</h1>
+      </div>
+    );
+  }
+export default App;  
+
+* Start the app by: npm start
+
+* Create folder components
+  Inside it, add: topbar/Topbar.jsx   //jsx (not compulsory) cause VSC help you with some aspects
+  
+  
