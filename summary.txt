@@ -39,7 +39,13 @@ export default App;
 
 * Start the app by: npm start
 
+* npm install node-sass    //for supporting scss files
+
 * Create folder components
-  Inside it, add: topbar/Topbar.jsx   //jsx (not compulsory) cause VSC help you with some aspects
+  Inside it, add: topbar/Topbar.jsx, topBar/topbar.scss   //jsx (not compulsory) cause VSC help you with some aspects
+  
+* rafce creates a skeleton of React component   (uses the extension ES7 React/Redux Snippets).
+
+*   
   
   
