@@ -48,6 +48,7 @@ export default App;
   Inside it, add: topbar/Topbar.jsx, topBar/topbar.scss   //jsx (not compulsory) cause VSC help you with some aspects
   
 * rafce creates a skeleton of React component   (uses the extension ES7 React/Redux Snippets).
+  .[name] creates a div with [name] as className
 
 * Jump into a sub-component in a component:
   <a href="#intro">Intro</a>
@@ -63,4 +64,8 @@ export default App;
   import {Person,Mail} from '@material-ui/icons'  //then use what in {} as components
   
   
-  
+* State Management in action:
+  const [menuOpen, setMenuOpen] = useState(false);  
+  <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+  const Topbar = ({menuOpen,setMenuOpen}) => {}
+  <div className={'topBar '+ (menuOpen && 'active')}>

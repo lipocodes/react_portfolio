@@ -24,7 +24,9 @@
   @import '../../global.scss';
   > = {height: $mainColor; } 
   
-*dislay:flex;  //arrange sub-components in the default direction (horizontally)
+* //arrange sub-components in the default direction (horizontally)
+  dislay:flex;  
+  flex-direction:column;
 
 * Align sub-components:
   align-items:center;
@@ -32,3 +34,35 @@
 
 * Inheritance:
   color:inherit;  //take color from parent  
+  
+* cursor:pointer;
+
+* More than 1 className:
+  <div className='topBar active'>
+  &.active{ 
+    background-color: $mainColor;
+    color:white;
+  }  
+  
+* Transform (sway this component by 45 degrees):
+  transform: rotate(45deg);
+  
+  
+* Animate a component (when there a change in the component's graphics):
+  transition:all 2s ease;  
+
+
+* Designing the Xth child of a given component
+ span{
+      &:first-child{background-color: white; transform: rotate(45deg);}
+      &:nth-child(2){opacity: 0;}
+      &:last-child{background-color: white;} 
+     } 
+
+* State management:
+  import {useState} from 'react';
+  const [menuOpen, setMenuOpen] = useState(false);  
+  
+  
+* onHover event:
+   &:hover{font-weight: 800;}  
