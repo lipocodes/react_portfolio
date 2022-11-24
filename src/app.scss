@@ -1,0 +1,16 @@
+.app{
+ height:100vh;
+ .sections{
+    width:100%;
+    height:calc(100vh);
+    background-color: lightsalmon;
+    position:relative;
+    top:70px;
+    scrollbar-width: 0;
+
+    > * {
+       width:100wh;
+       height:calc(100vh);
+    }
+ }
+}

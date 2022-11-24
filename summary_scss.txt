@@ -1,0 +1,34 @@
+* Nested definitions:
+  .app{
+    height:100vh;
+    .sections{ //in jsx file, they are also nested
+      width:100%;
+      height:calc(100vh);
+      background-color: lightsalmon;
+   }
+   
+    * { // for every component inside .app
+       width:100wh;
+       height:calc(100vh);
+    }
+}
+
+* Arrange compoennts by z index:
+  z-index:2; //if this is the biggest value, it's on top of others
+  
+* Independaent component:  position:fixed; top:0;   (position isn't correlated with other components')
+
+* Add src/global.scss:
+  $mainColor:#15023a;
+  In calling scss file:
+  @import '../../global.scss';
+  > = {height: $mainColor; } 
+  
+*dislay:flex;  //arrange sub-components in the default direction (horizontally)
+
+* Align sub-components:
+  align-items:center;
+  justify-content:space-between;  
+
+* Inheritance:
+  color:inherit;  //take color from parent  
