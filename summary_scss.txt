@@ -66,3 +66,42 @@
   
 * onHover event:
    &:hover{font-weight: 800;}  
+   
+* Hide overflowing parts of elements  
+  overflow:hidden
+
+* Push child to the end:
+  align-items:flex-end;
+
+* Align compopnent to the left of its parent:
+  float: left  
+  
+* position: absolute;  //relative to the paret component. The parent must have position:relative
+
+* Animate component: 
+ img{
+      width:30px;
+      height:30px;
+      animation: arrowBlink 2s infinite;
+     }
+  @keyframes arrowBlink {
+       100%{
+           opacity:0;
+           }
+  }
+  
+* Go to a new line, if no space left:
+ flex-wrap:wrap;
+
+* Populate lists:
+  <ul>
+   {list.map((item)=>(<PortfolioList title={item.title} />))}
+  </ul>
+
+  const PortfolioList = ({title}) => {
+  return (
+    <li className='portfolioList'>{title}</li>
+  )
+ }  
+    
+  

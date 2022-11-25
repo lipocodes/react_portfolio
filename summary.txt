@@ -69,3 +69,17 @@ export default App;
   <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
   const Topbar = ({menuOpen,setMenuOpen}) => {}
   <div className={'topBar '+ (menuOpen && 'active')}>
+  <div className="hamburger" onClick={()=>{setMenuOpen(!menuOpen)}}>
+  
+* Run code only once:
+   import React, { useEffect} from 'react'
+   useEffect(()=>{
+
+ }, []);  //if we see components inside [], it runs also when they get changed 
+
+
+* Manipulate component content:
+  import React, { useRef} from 'react' 
+  const textRef = useRef();
+  textRef=[value]; 
+  <span ref={textRef}></span> 
