@@ -113,3 +113,17 @@
   
 * Decorating a text:
    text-decoration: underline;  
+   
+* Inline style:
+   <div className="slider" style={{transform:`translateX(-${currentSlide*100}vw)`}}>
+
+* Resize when over:
+    &:hover{
+         transform:scale(1.1);
+        }
+
+* Prevent page refresh when form submitted:
+  <form onSubmit={handleSubmit}>
+  const handleSubmit = (e)=>{
+   e.preventDefault();
+  }		
