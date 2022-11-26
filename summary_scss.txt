@@ -105,3 +105,11 @@
  }  
     
   
+  
+* Positioning child component (if display:flex):
+  display: flex;
+  align-items: center;   //cross axis
+  justify-content: center;  //main axis
+  
+* Decorating a text:
+   text-decoration: underline;  
