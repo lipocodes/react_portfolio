@@ -1,13 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './works.scss';
 import imgMobile from '../../assets/mobile.png';
 import imgArrow from '../../assets/arrow.png';
 
 const Works = () => {
+  const [currentSlide,setCurrentSlide] = useState(0);
   const data = [
     {
       id: "1",
-      icon: "./assets/mobile.png",
+      icon: {imgMobile},
       title: "Web Design",
       desc:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
@@ -34,29 +35,40 @@ const Works = () => {
     },
   ];
 
+  const handleClick = (way)=>{
+   way==="left"?setCurrentSlide(currentSlide>0?currentSlide-1:data.length-1) : setCurrentSlide(currentSlide<data.length-1?currentSlide+1:0);
+  }
+
   return (
     <div className='works' id='works'>
-      <div className="slider">
-        <div className="container">
-          <div className="item">
-            <div className="left">
-              <div className="leftContainer">
-                <div className="imgContainer">
-                  <img src={imgMobile} alt=""/>
-                </div>
-                <h2>Title</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
-                <span>Projects</span>
-              </div>
-            </div>
-            <div className="right">
-              <img  src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/10/attachment_100040756-e1538485934255.jpeg?auto=format&q=60&fit=max&w=930"  alt="new"/>
-            </div>
-          </div>
-        </div>
+      <div className="slider" style={{transform:`translateX(-${currentSlide*100}vw)`}}>
+        {data.map((item)=>(
+               <div className="container">
+               <div className="item">
+                 <div className="left">
+                   <div className="leftContainer">
+                     <div className="imgContainer">
+                       <img src={item.icon} alt=""  />
+                     </div>
+                     <h2>{item.title}</h2>
+                     <p>{item.desc}  </p>
+                     <span>Projects</span>
+                   </div>
+                 </div>
+                 <div className="right">
+                   <img  src={item.img}  alt="new" />
+                 </div>
+               </div>
+             </div>
+        )
+        )}
+
+
+   
+
       </div>
-      <img src={imgArrow} className="arrow left" alt=""/>
-      <img src={imgArrow} className="arrow right" alt=""/>
+      <img src={imgArrow} className="arrow left" alt="" onClick={()=>handleClick("left")}/>
+      <img src={imgArrow} className="arrow right" alt="" onClick={()=>handleClick("right")}/>
     </div>
   )
 }
