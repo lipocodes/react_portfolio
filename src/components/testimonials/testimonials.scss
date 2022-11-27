@@ -1,12 +1,20 @@
+@import '../../global.scss';
+
 .testimonials{
    background-color: white;
    display:flex;
    flex-direction: column;
    align-items: center; 
 
+   @include mobile{
+      justify-content: space-around;
+   }
+
    .h1{
       font-size: 50px;
-
+      @include mobile{
+       font-size: 20px;
+     }
    }
    .container{
       width: 100%;
@@ -14,6 +22,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      background-color: white;
+
+      @include mobile{
+         flex-direction:column;
+         height:100%;
+      }
       
       .card{
          width: 250px;
@@ -25,6 +39,12 @@
          justify-content: space-around;
          padding:20px;
          transition:all 1s ease;
+
+         @include mobile{
+            height:180px;
+            width:200px;
+            margin: 10px 0 ;
+         }
 
         .top{
          display:flex;
@@ -40,6 +60,11 @@
           border-radius: 50%;
           object-fit: cover;
           padding:0 30px;
+
+          @include mobile{
+            width:30px;
+            height:30px;
+          }
          }
          .right{  height:25px;}
         
@@ -48,6 +73,10 @@
          padding:10px;
          background-color: rgb(250,244,245);
          border-radius: 10px;
+         @include mobile{
+            font-size: 12px;
+            padding:5px;
+         }
         }
 
         .bottom{
@@ -56,14 +85,30 @@
          justify-content: center;
          align-items: center;
 
-         h3{margin-bottom: 5px;}
-         h4{color:gray;}
+         h3{
+            margin-bottom: 5px;
+            @include mobile{
+               font-size: 14;
+            }
+         }
+         h4{
+            color:gray;
+            @include mobile{
+               font-size: 13;
+            }
+         }
         }
 
         &.featured{
          width: 300px;
          height:75%;
          margin:0 30px;
+
+         @include mobile{
+           width:220px;
+           height:180px;
+           margin:1px; 
+         }
         }
         &:hover{
          transform:scale(1.1);
